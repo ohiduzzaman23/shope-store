@@ -1,0 +1,22 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+@import "tailwindcss";
+@import "daisyui/daisyui.css";
+
+@plugin "daisyui" {
+  themes:
+    light --default,
+    dark --prefersdark;
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+:root {
+  --color-primary: #002e83;
+  --color-secondary: #6d28d9;
+  --color-accent: #faf8f3;
+}
