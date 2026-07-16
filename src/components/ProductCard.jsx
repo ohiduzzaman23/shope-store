@@ -19,10 +19,6 @@ const ProductCard = ({ product }) => {
           <span className="absolute top-4 left-4 rounded-full bg-violet-500 px-4 py-1 text-sm font-semibold text-white">
             Featured
           </span>
-
-          <button className="absolute top-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md">
-            <Heart size={18} className="text-gray-700" />
-          </button>
         </div>
 
         <div className="p-5">

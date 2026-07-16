@@ -6,16 +6,16 @@ import Container from "./Container";
 
 const Hero = () => {
   return (
-    <div className="hero bg-base-200 min-h-screen">
+    <div className="hero min-h-screen flex pt-20">
       <Container>
-        <div className="hero-content flex-col lg:flex-row-reverse gap-10 p-15">
+        <div className="hero-content flex-1 flex-col-reverse lg:flex-row-reverse gap-8 px-4 py-10 lg:pr-6">
           <div className="relative w-fit mx-auto">
             {/* Image 1 */}
             <div className="relative z-20 overflow-hidden rounded-2xl w-fit mx-auto pb-56">
               <img
                 src={heroImage_1}
                 alt=""
-                className="w-[420px] h-[560px] object-cover scale-110 hover:scale-100 transition-transform duration-700"
+                className="w-[260px] sm:w-[320px] lg:w-[420px] h-[340px] sm:h-[430px] lg:h-[560px] object-cover scale-110 hover:scale-100 transition-transform duration-700"
               />
             </div>
 
@@ -31,7 +31,7 @@ const Hero = () => {
             </div>
 
             {/* Image 3 */}
-            <div className="absolute right-[-60px] bottom-[-60px] z-10 hover:z-30">
+            <div className="absolute right-[-60px] bottom-[-60px] z-10  hover:z-30">
               <div className="overflow-hidden rounded-2xl shadow-xl">
                 <img
                   src={heroImage_3}
@@ -42,11 +42,21 @@ const Hero = () => {
             </div>
           </div>
 
-          <div>
-            <h1 className="text-5xl font-bold">Box Office News!</h1>
-            <p className="py-6 mr-10">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi.
+          <div className="flex-1">
+            <span className="border border-gray-400 rounded-full p-2 tracking-[0.2em] ">
+              Autumn / Winter 2026
+            </span>
+            <h1 className="text-7xl font-bold font-display mt-5 leading-tight">
+              Wear the
+              <br></br>
+              quiet luxury
+              <br></br>
+              of now.
+            </h1>
+            <p className="py-6 ">
+              Considered essentials in natural fibers, cut by hand and made to
+              last. A wardrobe built around restraint — and the confidence it
+              gives you.
             </p>
 
             <button className="btn btn-primary">Get Started</button>

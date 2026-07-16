@@ -34,6 +34,9 @@ export const routes = createBrowserRouter([
           return product;
         },
       },
+      {
+        path: "/footer",
+      },
     ],
   },
 ]);
