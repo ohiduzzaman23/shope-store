@@ -15,7 +15,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="max-lg:collapse lg:mb-48 w-full rounded-md shadow-sm dark:shadow-white/10">
+    <div className="max-lg:collapse lg:mb-6 w-full rounded-md shadow-sm dark:shadow-white/10">
       <Container>
         <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
         <label
@@ -56,7 +56,7 @@ const Navbar = () => {
                 <Link to={"/"}>Home</Link>
               </li>
               <li>
-                <button>Products</button>
+                <Link to={"/products"}>Products</Link>
               </li>
               <li>
                 <button>About</button>
