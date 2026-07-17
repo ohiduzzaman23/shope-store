@@ -27,25 +27,10 @@ const Navbar = () => {
             <label
               htmlFor="navbar-1-toggle"
               className="btn btn-ghost lg:hidden"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
-            </label>
+            ></label>
             <Link
               to={"/"}
-              className="primary font-semibold text-2xl text-[var(--color-primary)] "
+              className="primary font-semibold text-2xl tracking-[0.2em] font-display "
             >
               Fashion Store
             </Link>
@@ -59,7 +44,7 @@ const Navbar = () => {
                 <Link to={"/products"}>Products</Link>
               </li>
               <li>
-                <button>About</button>
+                <button>Wishlist</button>
               </li>
               <li>
                 <button>Contact</button>
@@ -107,7 +92,7 @@ const Navbar = () => {
               <Link to={"/products"}>Products</Link>
             </li>
             <li>
-              <button>About</button>
+              <button>Wishlist</button>
             </li>
             <li>
               <button>Contact</button>

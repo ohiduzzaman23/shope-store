@@ -7,12 +7,14 @@ import {
   Star,
   Truck,
 } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Container from "./Container";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const ProductDetails = () => {
   const products = useLoaderData();
+  const [quantity, setQuantity] = useState(1);
   const { name, category, price, image, rating, description } = products;
   return (
     <Container>
@@ -77,9 +79,27 @@ const ProductDetails = () => {
             <div className="flex flex-col md:flex-row gap-4 mt-12">
               {/* Quantity */}
               <div className="flex items-center justify-between border rounded-full px-6 py-4 w-full md:w-40">
-                <Minus size={18} />
+                <button
+                  onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
+                  className="w-8 h-8 flex items-center justify-center bg-gray-100 text-gray-600 hover:bg-gray-200"
+                >
+                  <FaMinus size={12} />
+                </button>
+                <input
+                  type="text"
+                  value={quantity}
+                  readOnly
+                  className="w-12 h-8 text-center border-none text-sm outline-none"
+                />
+                <button
+                  onClick={() => setQuantity((prev) => prev + 1)}
+                  className="w-8 h-8 flex items-center justify-center bg-gray-100 text-gray-600 hover:bg-gray-200"
+                >
+                  <FaPlus size={12} />
+                </button>
+                {/* <Minus size={18} />
                 <span className="font-semibold">1</span>
-                <Plus size={18} />
+                <Plus size={18} /> */}
               </div>
 
               {/* Button */}

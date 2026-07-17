@@ -3,7 +3,7 @@ import shopLogo from "../assets/shop-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="footer sm:footer-horizontal bg-base-200 text-base-content p-10 mt-6">
+    <footer className="footer sm:footer-horizontal bg-[linear-gradient(to_bottom_right,#3A2F20_0%,#0D0C0A_100%)]  text-white p-10 mt-6">
       <aside>
         <img className="w-10 mx-auto" src={shopLogo} alt="Shop Logo" />
         <p className="text-xl">Fashion Store</p>
