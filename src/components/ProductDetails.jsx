@@ -13,7 +13,7 @@ const ProductDetails = () => {
   const { toggleWishlist, isWishlisted } = useWishlist();
   return (
     <Container>
-      <div>
+      <div className="mt-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <div>
             <img
