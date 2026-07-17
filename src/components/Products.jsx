@@ -7,7 +7,7 @@ const Products = () => {
   const products = useLoaderData();
   return (
     <Container>
-      <div>
+      <div className="mt-24">
         <div className="text-center mb-10">
           <p className="text-xl text-gray-400 tracking-[0.2em]">Collection</p>
           <h2 className="font-display text-5xl mt-3 font-semibold">

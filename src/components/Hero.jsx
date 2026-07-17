@@ -8,8 +8,8 @@ const Hero = () => {
   return (
     <div className="hero min-h-screen flex pt-20 ">
       <Container>
-        <div className="hero-content flex-1 flex-col-reverse lg:flex-row-reverse gap-8 px-4 py-10 lg:pr-6">
-          <div className="relative w-fit mx-auto">
+        <div className="hero-content flex-col-reverse lg:flex-row-reverse gap-8 px-4 py-10 lg:pr-6">
+          <div className="relative w-fit mx-auto flex-1">
             {/* Image 1 */}
             <div className="relative z-20 overflow-hidden rounded-2xl w-fit mx-auto pb-56">
               <img
@@ -20,7 +20,7 @@ const Hero = () => {
             </div>
 
             {/* Image 2 */}
-            <div className="absolute left-[-100px] top-1/3 -translate-y-1/2 z-10 hover:z-30 transition-all duration-300">
+            <div className="absolute left-[-100px] top-1/3 -translate-y-1/2 z-10 lg:left-[-20px] hover:z-30 transition-all duration-300">
               <div className="overflow-hidden rounded-2xl shadow-xl">
                 <img
                   src={heroImage_2}
@@ -31,7 +31,7 @@ const Hero = () => {
             </div>
 
             {/* Image 3 */}
-            <div className="absolute right-[-60px] bottom-[-60px] z-10  hover:z-30">
+            <div className="absolute right-[-60px] bottom-[-60px] z-10 lg:right-[-20px]  hover:z-30">
               <div className="overflow-hidden rounded-2xl shadow-xl">
                 <img
                   src={heroImage_3}
@@ -58,8 +58,22 @@ const Hero = () => {
               last. A wardrobe built around restraint — and the confidence it
               gives you.
             </p>
-
             <button className="btn btn-primary">Get Started</button>
+            <hr className="mt-20 w-full lg:w-[500px] text-gray-500"></hr>
+            <div className="flex gap-20 mt-20">
+              <div className="space-y-2">
+                <h2 className="font-display text-4xl">120+</h2>
+                <p className="tracking-[0.1em]">Artisans</p>
+              </div>
+              <div className="space-y-2">
+                <h2 className="font-display text-4xl">14</h2>
+                <p className="tracking-[0.1em]">Countries</p>
+              </div>
+              <div className="space-y-2">
+                <h2 className="font-display text-4xl">100%</h2>
+                <p className="tracking-[0.1em]">Natural fibers</p>
+              </div>
+            </div>
           </div>
         </div>
       </Container>

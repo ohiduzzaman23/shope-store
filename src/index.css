@@ -32,6 +32,9 @@ body {
   background-color: var(--color-primary);
 }
 
+@utility color-secondary {
+  color: var(--color-secondary);
+}
 @utility color-accent {
   color: var(--color-accent);
 }

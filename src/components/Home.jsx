@@ -9,9 +9,9 @@ const Home = () => {
   const products = useLoaderData();
   return (
     <div>
-      <section className="bg-[linear-gradient(to_bottom_right,#3A2F20_0%,#0D0C0A_100%)] text-white ">
+      <section className="bg-[linear-gradient(to_bottom_right,#3A2F20_-10%,#0D0C0A_100%)] text-white ">
         <Hero></Hero>
-        <div className=" mt-20">
+        <div className=" mt-10">
           <TopMarquee></TopMarquee>
         </div>
       </section>
