@@ -9,7 +9,7 @@ const Home = () => {
   const products = useLoaderData();
   return (
     <div>
-      <section className="bg-[linear-gradient(to_bottom_right,#3A2F20_0%,#0D0C0A_100%)] text-white">
+      <section className="bg-[linear-gradient(to_bottom_right,#3A2F20_0%,#0D0C0A_100%)] text-white ">
         <Hero></Hero>
         <div className=" mt-20">
           <TopMarquee></TopMarquee>
@@ -18,7 +18,6 @@ const Home = () => {
       <Container>
         <div>
           <div className="my-15 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div></div>
             <div className="">
               <p className="text-sm uppercase tracking-[0.2em] text-gray-400 md:text-base">
                 Editor's edit

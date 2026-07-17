@@ -1,21 +1,16 @@
-import {
-  Heart,
-  Minus,
-  Plus,
-  ShieldCheck,
-  ShoppingBag,
-  Star,
-  Truck,
-} from "lucide-react";
+import { Heart, ShieldCheck, ShoppingBag, Star, Truck } from "lucide-react";
 import React, { useState } from "react";
 import { useLoaderData } from "react-router";
 import Container from "./Container";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import { useWishlist } from "../context/WishlistContext";
 
 const ProductDetails = () => {
   const products = useLoaderData();
   const [quantity, setQuantity] = useState(1);
   const { name, category, price, image, rating, description } = products;
+
+  const { toggleWishlist, isWishlisted } = useWishlist();
   return (
     <Container>
       <div>
@@ -53,13 +48,11 @@ const ProductDetails = () => {
             {/* Description */}
             <p className="mt-8 text-gray-600 leading-8">{description}</p>
 
-            {/* Stock */}
             <div className="inline-flex items-center gap-2 rounded-full bg-green-100 text-green-700 px-4 py-2 mt-8">
               <span className="w-2 h-2 rounded-full bg-green-500"></span>
               In stock — ships in 48h
             </div>
 
-            {/* Color */}
             <div className="mt-10">
               <div className="flex justify-between">
                 <h3 className="font-semibold">Color</h3>
@@ -77,7 +70,6 @@ const ProductDetails = () => {
 
             {/* Cart */}
             <div className="flex flex-col md:flex-row gap-4 mt-12">
-              {/* Quantity */}
               <div className="flex items-center justify-between border rounded-full px-6 py-4 w-full md:w-40">
                 <button
                   onClick={() => setQuantity((prev) => Math.max(1, prev - 1))}
@@ -97,20 +89,26 @@ const ProductDetails = () => {
                 >
                   <FaPlus size={12} />
                 </button>
-                {/* <Minus size={18} />
-                <span className="font-semibold">1</span>
-                <Plus size={18} /> */}
               </div>
 
-              {/* Button */}
               <button className="flex-1 rounded-full bg-color-primary hover:bg-[#022463] text-white py-5 flex items-center justify-center gap-3 font-semibold  transition">
                 <ShoppingBag size={18} />
                 Add to cart
               </button>
 
               {/* Wishlist */}
-              <button className="w-16 h-16 rounded-full border flex items-center justify-center hover:bg-gray-100 transition">
-                <Heart size={22} />
+              <button
+                onClick={() => toggleWishlist(products)}
+                className="w-16 h-16 rounded-full border flex items-center justify-center hover:bg-gray-100 transition"
+              >
+                <Heart
+                  size={22}
+                  className={
+                    isWishlisted(products.id)
+                      ? "fill-red-500 text-red-500"
+                      : "text-gray-500"
+                  }
+                />
               </button>
             </div>
 

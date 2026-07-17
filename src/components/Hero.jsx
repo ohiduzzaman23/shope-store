@@ -6,7 +6,7 @@ import Container from "./Container";
 
 const Hero = () => {
   return (
-    <div className="hero min-h-screen flex pt-20">
+    <div className="hero min-h-screen flex pt-20 ">
       <Container>
         <div className="hero-content flex-1 flex-col-reverse lg:flex-row-reverse gap-8 px-4 py-10 lg:pr-6">
           <div className="relative w-fit mx-auto">

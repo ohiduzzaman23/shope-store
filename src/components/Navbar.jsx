@@ -1,103 +1,95 @@
-import React from "react";
-import Container from "./Container";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router";
+import { HiBars3 } from "react-icons/hi2";
 import { CiLight } from "react-icons/ci";
 import { MdDarkMode } from "react-icons/md";
-import { Link } from "react-router";
+import Container from "./Container";
 
 const Navbar = () => {
-  const handleTheme = (checked) => {
-    const html = document.querySelector("html");
-    if (checked) {
-      html.setAttribute("data-theme", "dark");
-    } else {
-      html.setAttribute("data-theme", "light");
-    }
-  };
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.setAttribute(
+      "data-theme",
+      darkMode ? "dark" : "light",
+    );
+  }, [darkMode]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 w-full bg-base-100 max-lg:collapse lg:mb-6 rounded-md shadow-sm dark:shadow-white/10 ">
+    <div className="fixed top-0 left-0 z-50 w-full bg-base-100 shadow-md">
       <Container>
-        <input id="navbar-1-toggle" className="peer hidden" type="checkbox" />
-        <label
-          htmlFor="navbar-1-toggle"
-          className="fixed inset-0 hidden max-lg:peer-checked:block"
-        ></label>
-        <div className="collapse-title navbar">
+        <div className="navbar px-0">
           <div className="navbar-start">
-            <label
-              htmlFor="navbar-1-toggle"
-              className="btn btn-ghost lg:hidden"
-            ></label>
+            <div className="dropdown lg:hidden">
+              <label tabIndex={0} className="btn btn-ghost">
+                <HiBars3 className="text-2xl" />
+              </label>
+
+              <ul
+                tabIndex={0}
+                className="menu menu-sm dropdown-content mt-3 z-[100] w-52 rounded-box bg-base-100 p-2 shadow"
+              >
+                <li>
+                  <Link to="/">Home</Link>
+                </li>
+
+                <li>
+                  <Link to="/products">Products</Link>
+                </li>
+
+                <li>
+                  <Link to="/wishlist">Wishlist</Link>
+                </li>
+
+                <li>
+                  <button>Contact</button>
+                </li>
+              </ul>
+            </div>
+
             <Link
-              to={"/"}
-              className="primary font-semibold text-2xl tracking-[0.2em] font-display "
+              to="/"
+              className="text-2xl font-bold tracking-wider font-display"
             >
               Fashion Store
             </Link>
           </div>
-          <div className="navbar-start hidden lg:flex">
-            <ul className="menu menu-horizontal px-1">
+
+          {/* Desktop Menu */}
+          <div className="navbar-center hidden lg:flex">
+            <ul className="menu menu-horizontal gap-2">
               <li>
-                <Link to={"/"}>Home</Link>
+                <Link to="/">Home</Link>
               </li>
+
               <li>
-                <Link to={"/products"}>Products</Link>
+                <Link to="/products">Products</Link>
               </li>
+
               <li>
-                <button>Wishlist</button>
+                <Link to="/wishlist">Wishlist</Link>
               </li>
+
               <li>
                 <button>Contact</button>
               </li>
             </ul>
           </div>
+
+          {/* Right Side */}
           <div className="navbar-end">
-            {/* Dark & Light theme */}
-            <label className="swap swap-rotate">
-              {/* this hidden checkbox controls the state */}
+            <label className="swap swap-rotate cursor-pointer">
               <input
-                onChange={(e) => handleTheme(e.target.checked)}
                 type="checkbox"
-                className="theme-controller"
-                value="synthwave"
+                checked={darkMode}
+                onChange={(e) => setDarkMode(e.target.checked)}
               />
 
-              {/* sun icon */}
-              <svg
-                className="swap-off h-10 w-10 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <CiLight />
-              </svg>
+              <CiLight className="swap-off text-3xl" />
 
-              {/* moon icon */}
-              <svg
-                className="swap-on h-10 w-10 fill-current"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-              >
-                <MdDarkMode />
-              </svg>
+              <MdDarkMode className="swap-on text-3xl" />
             </label>
           </div>
-        </div>
-
-        <div className="collapse-content lg:hidden z-1">
-          <ul className="menu">
-            <li>
-              <button>Home</button>
-            </li>
-            <li>
-              <Link to={"/products"}>Products</Link>
-            </li>
-            <li>
-              <button>Wishlist</button>
-            </li>
-            <li>
-              <button>Contact</button>
-            </li>
-          </ul>
         </div>
       </Container>
     </div>

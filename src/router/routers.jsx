@@ -3,6 +3,7 @@ import Root from "../Root/Root";
 import Home from "../components/Home";
 import Products from "../components/Products";
 import ProductDetails from "../components/ProductDetails";
+import Wishlist from "../components/Wishlist";
 
 export const routes = createBrowserRouter([
   {
@@ -35,7 +36,8 @@ export const routes = createBrowserRouter([
         },
       },
       {
-        path: "/footer",
+        path: "/wishlist",
+        Component: Wishlist,
       },
     ],
   },
